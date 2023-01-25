@@ -19,9 +19,12 @@ class Product
     {
         return $this->brand;
     }
-    public function set_variables($brand)
+    public function set_var_prod($brand, $quantity, $price, $type)
     {
         $this->brand = $brand;
+        $this->quantity = $quantity;
+        $this->price = $price;
+        $this->type = $type;
     }
 
 }
@@ -42,6 +45,15 @@ class Food extends Product
             . $this->quantity . "kg</div><div>" . $this->type . "</div><div> Scadenza: " . $this->date . "</div><div> Ingredienti: "
             . $this->components . "</div></div>";
     }
+    public function set_var_food($date, $components)
+    {
+        $this->date = $date;
+        $this->components = $components;
+    }
+    public function get_var_food($date)
+    {
+        return $this->date;
+    }
 }
 class Hygene extends Product
 {
@@ -60,6 +72,15 @@ class Hygene extends Product
             . "</div><div> Modalita' d'uso: " . $this->use . "</div><div> Avvertenze: "
             . $this->instructions . "</div></div>";
     }
+    public function set_var_hygen($use, $instructions)
+    {
+        $this->use = $use;
+        $this->instructions = $instructions;
+    }
+    public function get_var_hygen($use)
+    {
+        return $this->use;
+    }
 }
 class Play extends Product
 {
@@ -74,6 +95,14 @@ class Play extends Product
     {
         return "<div class= 'card'><h2>" . $this->brand . "</h2><div> Prezzo: " . $this->price . "euro.</div><div>Contenitore da: "
             . $this->quantity . "pezzi</div><div>" . $this->type . "</div><div> Adatto a: " . $this->age_target . "</div></div>";
+    }
+    public function set_var_play($age_target)
+    {
+        $this->age_target = $age_target;
+    }
+    public function get_var_play($age_target)
+    {
+        return $this->age_target;
     }
 }
 class Meds extends Product
@@ -97,6 +126,16 @@ class Meds extends Product
             . "</div><div> Modalita' d'uso: " . $this->use . "</div><div> Avvertenze: "
             . $this->instructions . "</div></div>Scadenza: " . $this->date . "</div></div>";
     }
+    public function set_var_meds($use, $instructions, $date)
+    {
+        $this->use = $use;
+        $this->instructions = $instructions;
+        $this->date = $date;
+    }
+    public function get_var_meds($use)
+    {
+        return $this->use;
+    }
 }
 class Beds extends Product
 {
@@ -117,6 +156,16 @@ class Beds extends Product
             . "euro</div><div> Quantita': " . $this->quantity . "</div><div>" . $this->type
             . "</div><div> Durata media: " . $this->avg_duration . "</div><div>" . $this->details
             . "</div><div> Adatto a: " . $this->age_target . "</div></div>";
+    }
+    public function set_var_beds($avg_duration, $details, $age_target)
+    {
+        $this->avg_duration = $avg_duration;
+        $this->details = $details;
+        $this->age_target = $age_target;
+    }
+    public function get_var_beds($avg_duration)
+    {
+        return $this->avg_duration;
     }
 }
 class Animal_Products

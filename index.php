@@ -8,7 +8,7 @@
     <title>Animal Products</title>
 
     <?php
-    include "classes/main_classes.php";
+    require_once 'main_classes.php';
 
     $cat_food = new Food("croccantini buoni", 5, 19.99, "crocchette multivitaminiche", "2025", "pesce, carne, vitamine");
     $cat_hygene = new Hygene("anti-pulci", 50, 11.99, "spray contro le pulci", "applicare una volta a settimana", "sciacquare abbondantemente le mani dopo l'uso");
@@ -24,6 +24,9 @@
 
     $cat = new Cats($cat_food, $cat_hygene, $cat_play, $cat_med, $cat_bed);
     $dog = new Dogs($dog_food, $dog_hygene, $dog_play, $dog_med, $dog_bed);
+
+    var_dump($cat);
+    var_dump($dog);
 
     ?>
 
